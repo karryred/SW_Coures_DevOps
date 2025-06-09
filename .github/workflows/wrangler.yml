@@ -12,13 +12,13 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to Dev
+      - name: Deploy to Dev #Deploy server
         if: github.ref == 'refs/heads/main'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           environment: dev
-      - name: Deploy to Prod
+      - name: Deploy to Prod #Prod server
         if: github.ref == 'refs/heads/release'
         uses: cloudflare/wrangler-action@v3
         with:
