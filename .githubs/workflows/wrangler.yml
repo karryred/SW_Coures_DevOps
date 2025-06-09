@@ -3,16 +3,14 @@ name: Deploy
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy
     steps:
-      -uses: actions/checkout@v4
-      -name: Deploy
-      uses: cloudflare/wrangler-action@v3
-      with:
-        apiToken: ${{{ secrets.CLOUDFLARE_API_TOKEN}}}
-
+      - uses: actions/checkout@v4
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
