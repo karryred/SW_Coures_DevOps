@@ -3,4 +3,7 @@ main = "src/index.js"
 account_id = "91e974c20bba4ec0edcc390daf40a976"
 compatibility_date = "2025-06-08"
 
+[[kv_namespaces]]
+binding = "TODOS"
+id = "9891d05674bb46f28ce83ba29832682e"
 
